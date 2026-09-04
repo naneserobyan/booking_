@@ -314,5 +314,5 @@ def add_property():
     return redirect(url_for("admin_dashboard"))
 
 
-if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+# if __name__ == "__main__":
+    # app.run(debug=True, port=5001)

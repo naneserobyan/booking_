@@ -19,7 +19,7 @@ Python and unchanged; `app.py` adds the web interface on top of it.
 pip install -r requirements.txt
 python app.py
 ```
-Open **http://localhost:5000**
+
 
 ### Customer flow
 1. Enter a destination country, dates, and number of guests.
