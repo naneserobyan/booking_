@@ -1,14 +1,3 @@
-"""
-app.py
-
-Web interface on top of the existing BookingSystem (models.py,
-booking_system.py). This file is NEW — the core files are never touched.
-
-Filters (breakfast / parking / central) and sort are plain links that
-carry the current search in the URL and toggle one thing at a time — no
-"Apply" button, no JavaScript. Clicking a filter reloads the page with
-the new URL and the result updates immediately.
-"""
 
 import json
 import os
@@ -252,7 +241,7 @@ def book():
 
 
 # ---------------------------------------------------------------------
-# Admin (staff-only) pages
+# Admin pages
 # ---------------------------------------------------------------------
 
 @app.route("/admin/login", methods=["GET", "POST"])
@@ -326,4 +315,4 @@ def add_property():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=5001)
