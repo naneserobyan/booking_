@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+data.json
+photos.json
+amenities.json
+test_data.json
+venv/
+.venv/
