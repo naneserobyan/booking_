@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Staff Login</title>
+  <style>
+    :root { --bg: #FBF8F2; --ink: #1E2A22; --ink-soft: #58685D; --teal: #1C6E68; --teal-dark: #14504B; --border: #E4DFD1; --err-bg: #FBEDEA; --err: #B14B3E; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: var(--bg); display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+    .box { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 32px; width: 320px; }
+    h1 { font-family: Georgia, serif; font-weight: 400; font-size: 20px; margin: 0 0 6px; }
+    p.sub { color: var(--ink-soft); font-size: 13px; margin: 0 0 20px; }
+    label { font-size: 12.5px; font-weight: 600; color: var(--ink-soft); display: flex; flex-direction: column; gap: 4px; margin-bottom: 16px; }
+    input { font-size: 14px; padding: 9px 10px; border: 1px solid var(--border); border-radius: 4px; font-family: inherit; }
+    button { width: 100%; font-family: inherit; font-size: 14px; font-weight: 600; padding: 10px; border-radius: 4px; border: none; cursor: pointer; background: var(--teal); color: #fff; }
+    button:hover { background: var(--teal-dark); }
+    .flash { padding: 9px 12px; border-radius: 4px; font-size: 13px; margin-bottom: 16px; background: var(--err-bg); border: 1px solid #E3B7AD; color: var(--err); }
+    a.back { display: block; margin-top: 14px; font-size: 12.5px; color: var(--ink-soft); text-align: center; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Staff login</h1>
+    <p class="sub">Only the organization can add rooms and see all bookings.</p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="flash">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+      <label>
+        Password
+        <input type="password" name="password" required autofocus />
+      </label>
+      <button type="submit">Log in</button>
+    </form>
+    <a class="back" href="{{ url_for('index') }}">← Back to booking page</a>
+  </div>
+</body>
+</html>
